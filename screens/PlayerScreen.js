@@ -29,11 +29,19 @@ export default function HomeScreen() {
          
           <Card.Content>
             <Text>Next up:</Text>
-            <Text style={{ fontWeight: 700, fontSize: 18 }}>Never gonna give you up</Text>
-            <Text style={{ fontWeight: 700 }}>By Rick Ashley</Text>
             <View style={styles.flex}>
-            <Button style={styles.button} icon="arrow-drop-up" mode="contained" >LIKE</Button>
-            <Button style={styles.button} icon="arrow-drop-down" mode="contained" >DISLIKE</Button>
+              <View style={styles.flexGrow}> 
+                <Text style={{ fontWeight: 700, fontSize: 18 }}>Never gonna give you up</Text>
+                <Text style={{ fontWeight: 700 }}>By Rick Ashley</Text>
+              </View>
+              <View> 
+                <Text style={{ fontSize: 18 }}>in 2:16</Text>
+              </View>
+            </View>
+           
+            <View style={styles.flex}>
+              <Button style={[styles.button, styles.flexGrow]} icon="arrow-drop-up" mode="contained" >YEP</Button>
+              <Button style={[styles.button, styles.flexGrow ]} icon="arrow-drop-down" mode="contained" >MEH</Button>
             </View>
           </Card.Content>
         </Card>
@@ -62,6 +70,8 @@ const styles = StyleSheet.create({
     maxWidth:500,
     padding: 20,
     flex: 1,
+  }, flexGrow: {
+    flexGrow:1,
   },
   cardCover: {
     marginTop:40,
