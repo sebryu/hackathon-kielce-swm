@@ -1,4 +1,5 @@
-import * as WebBrowser from 'expo-web-browser';
+import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+
 import React from 'react';
 import {
   Image,
@@ -17,7 +18,25 @@ export default function HomeScreen() {
       <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
-        <Text style={styles.getStartedText}>Currently playing</Text>
+          <Card style={styles.containerCard}>
+          <Card.Title/>
+          <Text>Currently playing</Text>
+          <Text style={{ fontWeight: 700, fontSize: 24 }}>Best song ever</Text>
+          <Text style={{ fontWeight: 700, fontSize: 18 }}>by One Direction</Text>
+          <Text>Proposed by @aleqsio</Text>
+            <Card.Cover style={styles.cardCover} source={{ uri: 'https://picsum.photos/700' }} />
+            
+         
+          <Card.Content>
+            <Text>Next up:</Text>
+            <Text style={{ fontWeight: 700, fontSize: 18 }}>Never gonna give you up</Text>
+            <Text style={{ fontWeight: 700 }}>By Rick Ashley</Text>
+            <View style={styles.flex}>
+            <Button style={styles.button} icon="arrow-drop-up" mode="contained" >LIKE</Button>
+            <Button style={styles.button} icon="arrow-drop-down" mode="contained" >DISLIKE</Button>
+            </View>
+          </Card.Content>
+        </Card>
       </ScrollView>
     </View>
   );
@@ -30,81 +49,33 @@ HomeScreen.navigationOptions = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
   },
-  // developmentModeText: {
-  //   marginBottom: 20,
-  //   color: 'rgba(0,0,0,0.4)',
-  //   fontSize: 14,
-  //   lineHeight: 19,
-  //   textAlign: 'center',
   contentContainer: {
     paddingTop: 30,
+    alignItems: "center",
+    justifyContent: "center",
+
   },
-  // welcomeContainer: {
-  //   alignItems: 'center',
-  //   marginTop: 10,
-  //   marginBottom: 20,
-  // },
-  // welcomeImage: {
-  //   width: 100,
-  //   height: 80,
-  //   resizeMode: 'contain',
-  //   marginTop: 3,
-  //   marginLeft: -10,
-  // homeScreenFilename: {
-  //   marginVertical: 7,
-  // },
-  // codeHighlightText: {
-  //   color: 'rgba(96,100,109, 0.8)',
-  // },
-  // codeHighlightContainer: {
-  //   backgroundColor: 'rgba(0,0,0,0.05)',
-  //   borderRadius: 3,
-  //   paddingHorizontal: 4,
-  // },
-  // getStartedText: {
-  //   fontSize: 17,
-  //   color: 'rgba(96,100,109, 1)',
-  //   lineHeight: 24,
-  //   textAlign: 'center',
-  // },
-  // tabBarInfoContainer: {
-  //   position: 'absolute',
-  //   bottom: 0,
-  //   left: 0,
-  //   right: 0,
-  //   ...Platform.select({
-  //     ios: {
-  //       shadowColor: 'black',
-  //       shadowOffset: { width: 0, height: -3 },
-  //       shadowOpacity: 0.1,
-  //       shadowRadius: 3,
-  //     },
-  //     android: {
-  //       elevation: 20,
-  //     },
-  //   }),
-  //   alignItems: 'center',
-  //   backgroundColor: '#fbfbfb',
-  //   paddingVertical: 20,
-  // },
-  // tabBarInfoText: {
-  //   fontSize: 17,
-  //   color: 'rgba(96,100,109, 1)',
-  //   textAlign: 'center',
-  // },
-  // navigationFilename: {
-  //   marginTop: 5,
-  // },
-  // helpContainer: {
-  //   marginTop: 15,
-  //   alignItems: 'center',
-  // },
-  // helpLink: {
-  //   paddingVertical: 15,
-  // },
-  // helpLinkText: {
-  //   fontSize: 14,
-  //   color: '#2e78b7',
+  
+  containerCard: {
+    width:"50%",
+    maxWidth:500,
+    padding: 20,
+    flex: 1,
+  },
+  cardCover: {
+    marginTop:40,
+    marginBottom:40,
+    borderRadius: 10000,
+    margin: "auto",
+    borderBottomLeftRadius: 10000,
+    width:300,
+    height:300,
+  },
+  button: {
+    margin:10,
+  },
+  flex: {
+    flexDirection:"row",
+  }
 });
